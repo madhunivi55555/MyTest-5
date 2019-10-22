@@ -4,25 +4,25 @@
          stage('Build'){
             steps {
              echo "Build The Project"
-               bat "mvn clean"
+               sh "mvn clean"
            }
             }
          stage('deploy'){
             steps {
              echo "Deploy The Project"
-               bat "mvn compile"
+               sh "mvn compile"
             }   
              }
          stage('Test'){
             steps {
               echo "Test The Project"
-               bat "mvn test"
+               sh "mvn test"
             }
               }
          stage('Delivery'){
             steps {
               echo "Delivery The Project"
-               bat "mvn package"
+               sh "mvn package"
               }   
            }
      }
