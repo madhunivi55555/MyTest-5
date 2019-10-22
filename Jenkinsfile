@@ -1,9 +1,18 @@
    node{
-     stage('SCM Checkout'){
-       git 'https://github.com/madhunivi555/MyTest-5.git' 
-     }
-     stage('Compile-Package'){
-       def mvnHome = tool name: 'maven_3_6_2', type: 'maven'
-       sh "${mvnHome}/bin/mvn package"
-     }
-   }
+      agent any
+      stages {
+         stage('Build'){
+           echo "Build The Project"
+         }
+         stage('deploy'){
+            echo "Deploy The Project"
+         }
+         stage('Test'){
+            echo "Test The Project"
+         }
+         stage('Delivery'){
+            echo "Delivery The Project"
+         }
+      }
+   }    
+      
